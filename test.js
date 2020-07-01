@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 8080
+const PORT = process.env.PORT || 8080
 var session = require('express-session')
 var path = require('path');
 var router = express.Router();  
@@ -256,4 +256,4 @@ function viewReview(request, response) {
 /// ***************** ***************** *****************
 /// ***************** ***************** *****************
 /// ***************** ***************** *****************
-app.listen(port, () => console.log(`\n\tWeb app listening at http://localhost:${port}`));
+app.listen(PORT, () => console.log(`\n\tWeb app listening at http://localhost:${PORT}`));
