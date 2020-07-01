@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ATN shop</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+     <link rel="stylesheet" href="/css/style.css" /> 
+     <link rel="stylesheet" href="/css/reponsive.css" /> 
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <nav>
+            <div class="img-nav">
+                <img src="/img/logo.jpg" alt="" width="100px" height="50px"/>
+            </div>
+            <div class="content-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="http://localhost:8080/products">product</a></li>
+                    <li><a href="http://localhost:8080/login">Login</a></li>
+                    <li><a href="http://localhost:8080/order">Order</a></li>
+                    <li><a href="http://localhost:8080/staffs">Profile</a></li>
+                    <div id="id01" class="modal">
+                </ul>
+                <form>
+                    <input type="text" name="search" placeholder="Search....." />
+                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div>
+            <!-- The Modal -->
+            <button id="cart">
+                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                Cart
+            </button>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Cart</h5>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="cart-row">
+                            <span class="cart-item cart-header cart-column">Product</span>
+                            <span class="cart-price cart-header cart-column">Price</span>
+                            <span class="cart-quantity cart-header cart-column">Amount</span>
+                        </div>
+                        <div class="cart-items">
+                           
+                        </div>
+                        <div class="cart-total">
+                            <strong class="cart-total-title">Total:</strong>
+                            <span class="cart-total-price">0VNĐ</span>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary close-footer">Close</button>
+                        <button type="button" class="btn btn-primary order">Pay</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <!-- content -->
+    <section class="wrapper">
+        <div class="products">
+            <ul>
+                <li class="main-product">
+                    <div class="img-product">
+                        <img class="img-prd"
+                            src="/img/img1.jpg"
+                            alt="">
+                    </div>
+                    <div class="content-product">
+                        <h3 class="content-product-h3">Robot 1</h3>
+                        <div class="content-product-deltals">
+                            <div class="price">
+                             
+                            </div>
+                        
+                        </div>
+                    </div>
+                </li>
+                <li class="main-product">
+                    <div class="img-product">
+                        <img class="img-prd"
+                            src="/img/img2.jpg"
+                            alt="">
+                    </div>
+                    <div class="content-product">
+                        <h3 class="content-product-h3">Robot 2</h3>
+                        <div class="content-product-deltals">
+                            <div class="price">
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </li>
+                <li class="main-product">
+                    <div class="img-product">
+                        <img class="img-prd"
+                            src="/img/img3.jpg"
+                            alt="">
+                    </div>
+                    <div class="content-product">
+                        <h3 class="content-product-h3">Robot 3</h3>
+                        <div class="content-product-deltals">
+                            <div class="price">
+                                
+                            </div>
+                    
+                        </div>
+                    </div>
+                </li>
+                <li class="main-product no-margin">
+                    <div class="img-product">
+                        <img class="img-prd"
+                            src="/img/img4.jpg"
+                            alt="">
+                    </div>
+                    <div class="content-product">
+                        <h3 class="content-product-h3">Robot 4</h3>
+                        <div class="content-product-deltals">
+                            <div class="price">
+                                
+                            </div>
+                        
+                        </div>
+                    </div>
+                </li>
+                <li class="main-product">
+                    <div class="img-product">
+                        <img class="img-prd"
+                            src="/img/img5.jpg"
+                            alt="">
+                    </div>
+                    <div class="content-product">
+                        <h3 class="content-product-h3">product 5</h3>
+                        <div class="content-product-deltals">
+                            <div class="price">
+                         
+                            </div>
+                         
+                        </div>
+                    </div>
+                </li>
+                <li class="main-product">
+                    <div class="img-product">
+                        <img class="img-prd"
+                            src="/img/img6.jpg"
+                            alt="">
+                    </div>
+                    <div class="content-product">
+                        <h3 class="content-product-h3">Lego 6</h3>
+                        <div class="content-product-deltals">
+                            <div class="price">
+                               
+                            </div>
+                        
+                        </div>
+                    </div>
+                </li>
+                <li class="main-product">
+                    <div class="img-product">
+                        <img class="img-prd"
+                            src="/img/img7.jpg"
+                            alt="">
+                    </div>
+                    <div class="content-product">
+                        <h3 class="content-product-h3">Robot 7</h3>
+                        <div class="content-product-deltals">
+                            <div class="price">
+                               
+                            </div>
+                            
+                        </div>
+                    </div>
+                </li>
+                <li class="main-product no-margin">
+                    <div class="img-product">
+                        <img class="img-prd"
+                            src="/img/img8.jpg"
+                            alt="">
+                    </div>
+                    <div class="content-product">
+                        <h3 class="content-product-h3">Robot 8</h3>
+                        <div class="content-product-deltals">
+                            <div class="price">
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+<% if ( username ) { %>
+    <P> <%=username%> </P>
+<% }  %>
+
+
+<P> <%= mesg %> </P>
+ <!-- footer -->
+ <footer>
+    <div class="footer-item">
+        <div class="img-nav">
+            <img src="img/logo.jpg" alt="" width="100px" height="50px"/>
+        </div>
+        <div class="social-footer">
+            <li><a target="_blank" href="">
+                    <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                </a></li>
+            <li><a target="_blank" href="">
+                    <i class="fa fa-github-square" aria-hidden="true"></i>
+                </a></li>
+
+        </div>
+    </div>
+</footer>
+<!-- script -->
+ <script src="/js/main.js"></script> 
+</body>
+
+</html>
+

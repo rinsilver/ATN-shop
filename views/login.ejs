@@ -1,0 +1,56 @@
+
+<html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <head>
+        <title>ATN shop</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+     <link rel="stylesheet" href="css/style.css" /> 
+     <link rel="stylesheet" href="css/reponsive.css" /> 
+        <link rel="stylesheet" href="css/login.css"> 
+    </head>
+    
+    <body>   
+        <body>
+            <!-- header -->
+            <header>
+                <nav>
+                    <div class="img-nav">
+                        <img src="/img/logo.jpg" alt="" width="100px" height="50px"/>
+                    </div>
+                    <div class="content-nav">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="#">List</a></li>
+                            <li><a href="#">Login</a></li>
+                            <li><a href="#">Introduce</a></li>
+                            <div id="id01" class="modal">
+                        </ul>
+                        <form>
+                            <input type="text" name="search" placeholder="Search....." />
+                            <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </form>
+                    </div>
+                </nav>
+        
+            </header> 
+        <center><h1 style="color: black;"> Login page </h1>
+        <form action="login">  
+            <div class="container">   
+                <label>Username : </label>   
+                <input type="text" placeholder="Enter Username" name="username" required>  
+                <label>Password : </label>   
+                <input type="password" placeholder="Enter Password" name="password" required>  
+                <button type="submit">Login</button>
+                <div class="conatin"><input type="checkbox" checked="checked"> Remember me</div>
+                <div class="conatin"><a href="#">Sign up </a> </div>  
+            </div>   
+        </form></center>
+        <P> Msg: <%=mesg%> </P>
+     
+
+        
+    </body>
+</html>

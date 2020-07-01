@@ -1,0 +1,149 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ATN shop</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+     <link rel="stylesheet" href="/css/style.css" /> 
+     <link rel="stylesheet" href="/css/reponsive.css" /> 
+</head>
+    <!-- header -->
+    <header>
+        <nav>
+            <div class="img-nav">
+                <img src="/img/logo.jpg" alt="" width="100px" height="50px"/>
+            </div>
+            <div class="content-nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="">List</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="">Order</a></li>
+                    <div id="id01" class="modal">
+                </ul>
+                <form>
+                    <input type="text" name="search" placeholder="Search....." />
+                    <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                </form>
+            </div>
+            </nav>
+            </header>
+            <body>              
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="row">
+                                <H1>Các sản phẩm</H1>
+                            </div>
+                            
+                                <div class="row">
+                                <table width = "100%">
+                                <% for (var i = 0; i < productlist.length; i++) { %>
+                                        <tr style="border-width: 5px;border-color: rgb(33, 158, 81);padding-bottom: 15px;">
+                                            <td>
+                                                <img width="300px" height="230px" src="/img/<%= productlist[i].UrlImg%>">
+                                            </td>
+                                            <td > 
+                                                <H3><%= productlist[i].Name %></H3>
+                                                <p><b>Price: </b>
+                                                <%= productlist[i].Price%> / <%= productlist[i].Unit%> </p>
+                                                
+                                                <p><b>Information: </b></p>                                
+                                                <p><%= productlist[i].Information%> </p>
+                                                <button style="color: green;" type="button" class="btn btn-success" onclick="themvao('<%= productlist[i]._id %>', '<%= productlist[i].Name %>', '<%= productlist[i].Price%>' )">Thêm vào</button>
+                                            </td>
+                                        </tr>
+                                    <% } %>
+                                    
+                                </table>
+                                </div>
+                                    
+                
+                            
+                        </div>
+                
+                        <div class="col-sm-4">
+                            <div class="row">
+                                <H1>GIỎ hàng</H1>
+                            </div>
+                            <div class="row" id="giohang">
+                                <table width="100%" id="giohangTab" style="border-width: 5px;border-color: rgb(33, 158, 81);padding-bottom: 15px;">
+                                
+                                </table>
+                            </div>
+                            
+                            <form action="/payment">
+                            <input  name="dssp" id="dssp" type="hidden" value="">
+                            <button style="color:green" type="button" class="btn btn-success" onclick="submit()">Thanh toán</button>
+                            </form>
+                        </div>        
+                      </div>
+                      <footer>
+                        <div class="footer-item">
+                            <div class="img-nav">
+                                <img src="img/logo.jpg" alt="" width="100px" height="50px"/>
+                            </div>
+                            <div class="social-footer">
+                                <li><a target="_blank" href="">
+                                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                                    </a></li>
+                                <li><a target="_blank" href="">
+                                        <i class="fa fa-github-square" aria-hidden="true"></i>
+                                    </a></li>
+                
+                            </div>
+                        </div>
+                    </footer>
+                
+                <script>
+                    var dsspmua = "";
+                    var giohang = {};
+                
+                    function addGioHang(xID, xName, xPrice) {
+                        var hangthem = giohang[xID];
+                
+                        console.log(hangthem);
+                
+                        if (hangthem) {
+                            hangthem["soluong"] += 1
+                        } else {
+                            hangthem = { "ten" : xName, "gia" : xPrice, "soluong" : 1};
+                        }
+                        giohang[xID] = hangthem;
+                
+                        console.log(hangthem);
+                
+                    }
+                
+                    function themvao(xID, xName, xPrice) {
+                        //alert(xID + "  " + xName);
+                        var x = document.getElementById("giohangTab");
+                        var ds = document.getElementById("dssp");
+                
+                        /// ADD
+                        addGioHang(xID, xName, xPrice);
+                
+                        /// show list
+                        var xkeys = Object.keys(giohang);
+                        var showlist = "";
+                        dsspmua = "";
+                
+                        for(j=0; j<xkeys.length; j++)
+                        {
+            dsspmua += giohang[ xkeys[j] ]["ten"] + "_" + giohang[ xkeys[j] ]["soluong"] + "_" + giohang[ xkeys[j] ]["gia"] + "_";
+            showlist += "<tr> <td> " 
+                + giohang[ xkeys[j] ]["ten"] 
+                + " </td> <td> "  + giohang[ xkeys[j] ]["soluong"] + " </td> <td> "
+                + giohang[ xkeys[j] ]["gia"] + " </td></tr>";
+        };
+                
+                        x.innerHTML = showlist;
+                        ds.value = dsspmua;
+                    }
+                
+                
+                </script>
+                
+
+                
